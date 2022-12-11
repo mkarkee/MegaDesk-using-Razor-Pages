@@ -1,0 +1,68 @@
+﻿@page
+@model MegaDesk.Pages.DeskQuotes.IndexModel
+
+@{
+    ViewData["Title"] = "Desk Quotes";
+}
+
+<h1>Desk Quotes</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Create New</a>
+</p>
+
+<form>
+    <p>
+        Customer Name: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" class="btn btn-primary" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].QuoteDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].QuotePrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].DeliveryType.DeliveryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].Desk.DesktopMaterial.DesktopMaterialName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.DeskQuote) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuoteDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuotePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeliveryType.DeliveryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desk.DesktopMaterial.DesktopMaterialName)
+            </td>
+            <td>
+                    <a asp-page="./Edit" asp-route-id="@item.DeskQuoteId" class="btn btn-primary">Edit</a> 
+                    <a asp-page="./Details" asp-route-id="@item.DeskQuoteId" class="btn btn-primary">Details</a> 
+                    <a asp-page="./Delete" asp-route-id="@item.DeskQuoteId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

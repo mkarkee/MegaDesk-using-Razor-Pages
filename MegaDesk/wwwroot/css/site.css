@@ -1,0 +1,49 @@
+html {
+  font-size: 14px;
+}
+body {
+    background-color: lightblue;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+
+
+h1{
+    color: darkblue;
+}
+
+
+header{
+    background-color: dimgray;
+    color:azure
+}
+
+.bg-nav {
+    background-color: blue;
+    color: white;
+}
+
+.bg-f {
+    background-color: #1b6ec2;
+    color: white;
+}
+.text-color-new {
+    color: white;
+}
+a {
+    color: #0366d6;
+}
