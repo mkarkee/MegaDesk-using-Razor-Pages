@@ -44,6 +44,10 @@ header{
 .text-color-new {
     color: white;
 }
+.csname {
+    font-size: larger;
+    color: blueviolet;
+}
 a {
     color: #0366d6;
 }
